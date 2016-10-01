@@ -8,22 +8,29 @@
 *.gch
 *.pch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
 # Executables
 *.exe
 *.out
 *.app
+
+# 忽略版本控制文件
+.svn/
+.git/
+
+# 忽略指定文件夹
+bin/
+obj/
+
+# 忽略所有的指定后缀的文件
+*.suo
+*.aps
+*.pdb
+*.ilk
+*.exp
+*.swp
+*.un~
+
+# 忽略指定文件
+cscope.out
+tags
+tags.files
