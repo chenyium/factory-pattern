@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PRODUCT_H
+#define PRODUCT_H
 
 #include <iostream>
 using namespace std;
@@ -7,10 +8,12 @@ using namespace std;
 class CProduct
 {
 protected:
-	CProduct();
+	CProduct() {}
 public:
-	virtual ~CProduct();
+	virtual ~CProduct() {}
 
 public:
 	virtual void Function() = 0;
 };
+
+#endif

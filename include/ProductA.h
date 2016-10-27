@@ -1,8 +1,8 @@
-#pragma once
+#ifndef PRODUCT_A_H
+#define PRODUCT_A_H
 
 #include "Product.h"
 
-// 产品A
 class CProductA : public CProduct
 {
 public:
@@ -12,3 +12,5 @@ public:
 public:
 	virtual void Function();
 };
+
+#endif

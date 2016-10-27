@@ -39,12 +39,7 @@ void FactoryMethod()
     pFactory = new CFactoryConcrete();
 
     // 创建产品A
-    pProduct = pFactory->CreateProduct(0);
-    pProduct->Function();
-    delete pProduct, pProduct = NULL;
-
-    // 创建产品B
-    pProduct = pFactory->CreateProduct(1);
+    pProduct = pFactory->CreateProduct();
     pProduct->Function();
     delete pProduct, pProduct = NULL;
 

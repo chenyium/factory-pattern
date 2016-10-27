@@ -3,26 +3,12 @@
 #include "ProductB.h"
 #include "ProductNew.h"
 
-CProduct* CFactoryConcrete::CreateProduct(int nProductType)
+CProduct* CFactoryConcrete::CreateProduct()
 {
-	CProduct *pProduct = NULL;
-
-	switch (nProductType) {
-        case 0:
-            pProduct = new CProductA();
-            break;
-        case 1:
-            pProduct = new CProductB();
-            break;
-        default:
-            pProduct = new CProductA();
-            break;
-	}
-
-	return pProduct;
+    return new CProductA();
 }
 
-CProduct* CFactoryConcreteNew::CreateProduct(int nProductType)
+CProduct* CFactoryConcreteNew::CreateProduct()
 {
 	return new CProductNew();
 }

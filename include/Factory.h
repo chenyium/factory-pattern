@@ -1,4 +1,5 @@
-#pragma once
+#ifndef FACTORY_H
+#define FACTORY_H
 
 #include "Product.h"
 
@@ -11,7 +12,7 @@ public:
 	virtual ~CFactory() {}
 
 public:
-	virtual CProduct* CreateProduct(int nProductType = 0) = 0;
+	virtual CProduct* CreateProduct() = 0;
 };
 
 // 工厂实现
@@ -22,7 +23,7 @@ public:
 	virtual ~CFactoryConcrete() {}
 
 public :
-	virtual CProduct* CreateProduct(int nProductType = 0);
+	virtual CProduct* CreateProduct();
 };
 
 // 新工厂
@@ -33,5 +34,7 @@ public:
 	virtual ~CFactoryConcreteNew() {}
 
 public :
-	virtual CProduct* CreateProduct(int nProductType = 0);
+	virtual CProduct* CreateProduct();
 };
+
+#endif

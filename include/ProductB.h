@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PRODUCT_B_H
+#define PRODUCT_B_H
 
 #include "Product.h"
 
@@ -11,3 +12,5 @@ public:
 public:
 	virtual void Function();
 };
+
+#endif
