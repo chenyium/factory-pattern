@@ -4,12 +4,14 @@
 
 void SimpleFactory();
 void FactoryMethod();
+void FactoryMethodTempl();
 void AbstractFactory();
 
 int main(int argc, char **argv)
 {
     SimpleFactory();
     FactoryMethod();
+    FactoryMethodTempl();
 
     return 0;
 }
@@ -53,4 +55,38 @@ void FactoryMethod()
     delete pProduct, pProduct = NULL;
 
     delete pFactory, pFactory = NULL;
+}
+
+
+#include "ProductA.h"
+#include "ProductB.h"
+void FactoryMethodTempl() 
+{
+    cout << "----- factory method template --------------------" << endl;
+
+    CProduct *product = NULL;
+        
+    product = CFactoryTempl<CProduct, CProductA>::CreateProduct();
+    product->Function();
+    delete product, product = NULL;
+
+    product = CFactoryTempl<CProduct, CProductB>::CreateProduct();
+    product->Function();
+    delete product, product = NULL;
+
+    cout << "--------------------------------------------------" << endl;
+
+    CCreator<CProduct> creator;
+    creator.RegisterCreator<CProductA>("ProductA");
+    creator.RegisterCreator<CProductB>("ProductB");
+
+    product = creator.CreateProduct("ProductA");
+    product->Function();
+    delete product, product = NULL;
+
+    product = creator.CreateProduct("ProductB");
+    product->Function();
+    delete product, product = NULL;
+
+    creator.UnregisterCreators();
 }
